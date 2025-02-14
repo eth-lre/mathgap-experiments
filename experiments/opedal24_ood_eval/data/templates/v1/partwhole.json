@@ -1,0 +1,35 @@
+{
+    "statements": [
+        {
+            "templates": [
+                "{part_agents_list} together have [quantity] {whole_ent}."
+            ]
+        }
+    ],
+    "questions": [
+        {
+            "templates": [
+                "If everyone sums up the {whole_ent} that they have, how many {whole_ent} does everybody have combined?",
+                "If everyone sums up the {whole_ent} that they have, how many {whole_ent} does everybody have in total?",
+                "If everyone sums up the {whole_ent} that they have, what is the number of {whole_ent} that everybody has in total?"
+            ]
+        }
+    ],
+    "conclusions": [
+        {
+            "templates": [
+                "If everyone sums up the {whole_ent} that they have, there are [quantity;depth=1] = [quantity] in total."
+            ]
+        }
+    ],
+    "partials": {
+        "part_agents_list": [
+            "[part_agents;join=, ;final_join= and ]"
+        ],
+        "whole_ent": [
+            "[whole_entity]",
+            "[whole_attribute] [whole_entity]",
+            "[whole_unit]s of [whole_entity]"
+        ]
+    }
+}

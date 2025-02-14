@@ -1,0 +1,35 @@
+{
+    "statements": [
+        {
+            "templates": [
+                "Then [receiver] gets [quantity] more {ent} from [sender].",
+                "Then [receiver] buys [quantity] more {ent} from [sender].",
+                "Then [receiver] receives [quantity] more {ent} from [sender].",
+                "Then [receiver] gets another [quantity] {ent} from [sender]."
+            ],
+            "condition": "[receiver] == [conclusion.agent]"
+        },
+        {
+            "templates": [
+                "Then [sender] gives [receiver] [quantity] {ent}.",
+                "Then [sender] gives away [quantity] {ent} to [receiver].",
+                "Then [sender] donates [quantity] {ent} to [receiver].",
+                "Then [sender] sells [quantity] {ent} to [receiver].",
+                "Then [sender] loses [quantity] {ent} to [receiver].",
+                "Then [sender] gifts [quantity] {ent} to [receiver]."
+            ],
+            "condition": "[sender] == [conclusion.agent]"
+        }
+    ],
+    "questions": [
+    ],
+    "conclusions": [
+    ],
+    "partials": {
+        "ent": [
+            "[entity]",
+            "[attribute] [entity]",
+            "[unit]s of [entity]"
+        ]
+    }
+}

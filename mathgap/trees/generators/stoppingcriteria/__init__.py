@@ -1,0 +1,3 @@
+from mathgap.trees.generators.stoppingcriteria.criterion import Criterion
+from mathgap.trees.generators.stoppingcriteria.depth import BranchDepthCriterion, TreeDepthCriterion
+from mathgap.trees.generators.stoppingcriteria.treewidth import TreeWidthCriterion

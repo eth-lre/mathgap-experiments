@@ -1,0 +1,51 @@
+{
+    "statements": [
+        {
+            "templates": [
+                "The number of [subj_entity] that [subj_agent] has more than [obj_agent] is the same as the difference between the number of [other_subj_entity] that [other_subj_agent] has compared to [other_obj_agent]."
+            ],
+            "condition": "([comp_type] == more) and {same_eau}"
+        },
+        {
+            "templates": [
+                "The number of [subj_attribute] [subj_entity] that [subj_agent] has more than [obj_agent] is the same as the difference between the number of [other_subj_attribute] [other_subj_entity] that [other_subj_agent] has compared to [other_obj_agent]."
+            ],
+            "condition": "([comp_type] == more) and {same_eau}"
+        },
+        {
+            "templates": [
+                "The amount of [subj_entity] in [subj_unit]s that [subj_agent] has more than [obj_agent] is the same as the difference between the amount of [other_subj_unit]s that [other_subj_agent] has compared to [other_obj_agent]."
+            ],
+            "condition": "([comp_type] == more) and {same_eau}"
+        }
+    ],
+    "questions": [
+    ],
+    "conclusions": [
+    ],
+    "partials": {
+        "subj_ent": [
+            "[subj_entity]",
+            "[subj_attribute] [subj_entity]",
+            "[subj_unit]s of [subj_entity]"
+        ],
+        "obj_ent": [
+            "[obj_entity]",
+            "[obj_attribute] [obj_entity]",
+            "[obj_unit]s of [obj_entity]"
+        ],
+        "other_subj_ent": [
+            "[other_subj_entity]",
+            "[other_subj_attribute] [other_subj_entity]",
+            "[other_subj_unit]s of [other_subj_entity]"
+        ],
+        "other_obj_ent": [
+            "[other_obj_entity]",
+            "[other_obj_attribute] [other_obj_entity]",
+            "[other_obj_unit]s of [other_obj_entity]"
+        ]
+    },
+    "named_conditions": {
+        "same_eau": "([subj_entity] == [obj_entity]) and ([subj_attribute] == [obj_attribute]) and ([subj_unit] == [obj_unit]) and ([other_subj_entity] == [other_obj_entity]) and ([other_subj_attribute] == [other_obj_attribute]) and ([other_subj_unit] == [other_obj_unit])"
+    }
+}

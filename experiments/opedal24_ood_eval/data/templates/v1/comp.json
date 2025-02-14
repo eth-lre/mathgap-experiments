@@ -1,0 +1,96 @@
+{
+    "statements": [
+        {
+            "templates": [
+                "[subj_agent] has [quantity] {subj_ent} more than [obj_agent] has {obj_ent}."
+            ],
+            "condition": "([comp_type] == more) and not {same_eau}"
+        },
+        {
+            "templates": [
+                "[subj_agent] has [quantity] {subj_ent} more than [obj_agent]."
+            ],
+            "condition": "([comp_type] == more) and {same_eau}"
+        },
+        {
+            "templates": [
+                "[subj_agent] has [quantity] {subj_ent} less than [obj_agent] has {obj_ent}."
+            ],
+            "condition": "([comp_type] == less) and not {same_eau}"
+        },
+        {
+            "templates": [
+                "[subj_agent] has [quantity] {subj_ent} less than [obj_agent].",
+                "[subj_agent] has [quantity] {subj_ent} fewer than [obj_agent]."
+            ],
+            "condition": "([comp_type] == less) and {same_eau}"
+        }
+    ],
+    "questions": [
+        {
+            "templates": [
+                "How many {subj_ent} does [subj_agent] have more than [obj_agent]?"
+            ],
+            "condition": "([comp_type] == more) and {same_eau}"
+        },
+        {
+            "templates": [
+                "How many {subj_ent} does [subj_agent] have more than [obj_agent] has {obj_ent}?"
+            ],
+            "condition": "([comp_type] == more) and not {same_eau}"
+        },
+        {
+            "templates": [
+                "How many {subj_ent} does [subj_agent] have less than [obj_agent]?"
+            ],
+            "condition": "([comp_type] == less) and {same_eau}"
+        },
+        {
+            "templates": [
+                "How many {subj_ent} does [subj_agent] have less than [obj_agent] has {obj_ent}?"
+            ],
+            "condition": "([comp_type] == less) and not {same_eau}"
+        }
+    ],
+    "conclusions": [
+        {
+            "templates": [
+                "Therefore, [subj_agent] has [quantity;depth=1] = [quantity] {subj_ent} more than [obj_agent] has {obj_ent}."
+            ],
+            "condition": "([comp_type] == more) and not {same_eau}"
+        },
+        {
+            "templates": [
+                "So the difference between the number of [subj_entity] [subj_agent] and [obj_agent] have is [quantity;depth=1] = [quantity]."
+            ],
+            "condition": "([comp_type] == more) and {same_eau}"
+        },
+        {
+            "templates": [
+                "Therefore, [subj_agent] has [quantity;depth=1] = [quantity] {subj_ent} less than [obj_agent] has {obj_ent}."
+            ],
+            "condition": "([comp_type] == less) and not {same_eau}"
+        },
+        {
+            "templates": [
+                "So the difference between the number of [subj_entity] [subj_agent] and [obj_agent] have is [quantity;depth=1] = [quantity]."
+            ],
+            "condition": "([comp_type] == less) and {same_eau}"
+        }
+    ],
+    "partials": {
+        "subj_ent": [
+            "[subj_entity]",
+            "[subj_attribute] [subj_entity]",
+            "[subj_unit]s of [subj_entity]"
+        ],
+        "obj_ent": [
+            "[obj_entity]",
+            "[obj_attribute] [obj_entity]",
+            "[obj_unit]s of [obj_entity]"
+        ]
+    },
+    "named_conditions": {
+        "same_eau": "([subj_entity] == [obj_entity]) and ([subj_attribute] == [obj_attribute]) and ([subj_unit] == [obj_unit])"
+    }
+}

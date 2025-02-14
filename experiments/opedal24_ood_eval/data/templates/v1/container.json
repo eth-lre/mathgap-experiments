@@ -1,0 +1,44 @@
+{
+    "statements": [
+        {
+            "templates": [
+                "[agent] has [quantity] {ent}."
+            ]
+        }
+    ],
+    "questions": [
+        {
+            "templates": [
+                "How many [entity] does [agent] have?",
+                "How many [entity] does [agent] have in their collection?",
+                "How many [entity] does [agent] have in total?",
+                "How many [entity] does [agent] have totaled?",
+                "How many [entity] does [agent] have in all?"
+            ]
+        },
+        {
+            "templates": [
+                "What is the number of [attribute] [entity] that [agent] has?"
+            ]
+        },
+        {
+            "templates": [
+                "How many [unit]s of [entity] does [agent] have?"
+            ]
+        }
+    ],
+    "conclusions": [
+        {
+            "templates": [
+                "So [agent] has [quantity;depth=1] = [quantity] {ent}."
+            ]
+        }
+    ],
+    "partials": {
+        "ent": [
+            "[entity]",
+            "[attribute] [entity]",
+            "[unit]s of [entity]"
+        ]
+    }
+}

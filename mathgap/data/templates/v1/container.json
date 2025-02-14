@@ -1,0 +1,40 @@
+{
+    "statements": [
+        {
+            "templates": [
+                "[agent] has [quantity] {ent}."
+            ]
+        }
+    ],
+    "questions": [
+        {
+            "templates": [
+                "How many {ent} does [agent] have?"
+            ]
+        }
+    ],
+    "conclusions": [
+        {
+            "templates": [
+                "So [agent] now has [quantity;depth=1] = [quantity] {ent}."
+            ],
+            "condition": "{is_transfer}"
+        },
+        {
+            "templates": [
+                "So [agent] has [quantity;depth=1] = [quantity] {ent}."
+            ],
+            "condition": "not {is_transfer}"
+        }
+    ],
+    "partials": {
+        "ent": [
+            "[entity]",
+            "[attribute] [entity]",
+            "[unit]s of [entity]"
+        ]
+    },
+    "named_conditions": {
+        "is_transfer": "([self.rule] == ContTransferCont) or ([self.rule] == ContTransferContMisconception)"
+    }
+}

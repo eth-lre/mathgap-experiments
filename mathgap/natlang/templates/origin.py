@@ -1,0 +1,2 @@
+class Origin:
+    pass

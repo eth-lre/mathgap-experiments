@@ -1,0 +1,45 @@
+{
+    "statements": [
+        {
+            "templates": [
+                "The number of {subj_ent} [subj_agent] has more than the number of {obj_ent} [obj_agent] has is equal to the difference between the number of {other_subj_ent} [other_subj_agent] has and the number of {other_obj_ent} [other_obj_agent] has."
+            ],
+            "condition": "([comp_type] == more) and not {same_eau}"
+        },
+        {
+            "templates": [
+                "The number of {subj_ent} that [subj_agent] has more than [obj_agent] is equal to the difference in the number of {other_subj_ent} that [other_subj_agent] has compared to [other_obj_agent]."
+            ],
+            "condition": "([comp_type] == more) and {same_eau}"
+        }
+    ],
+    "questions": [
+    ],
+    "conclusions": [
+    ],
+    "partials": {
+        "subj_ent": [
+            "[subj_entity]",
+            "[subj_attribute] [subj_entity]",
+            "[subj_unit]s of [subj_entity]"
+        ],
+        "obj_ent": [
+            "[obj_entity]",
+            "[obj_attribute] [obj_entity]",
+            "[obj_unit]s of [obj_entity]"
+        ],
+        "other_subj_ent": [
+            "[other_subj_entity]",
+            "[other_subj_attribute] [other_subj_entity]",
+            "[other_subj_unit]s of [other_subj_entity]"
+        ],
+        "other_obj_ent": [
+            "[other_obj_entity]",
+            "[other_obj_attribute] [other_obj_entity]",
+            "[other_obj_unit]s of [other_obj_entity]"
+        ]
+    },
+    "named_conditions": {
+        "same_eau": "([subj_entity] == [obj_entity]) and ([subj_attribute] == [obj_attribute]) and ([subj_unit] == [obj_unit]) and ([other_subj_entity] == [other_obj_entity]) and ([other_subj_attribute] == [other_obj_attribute]) and ([other_subj_unit] == [other_obj_unit])"
+    }
+}

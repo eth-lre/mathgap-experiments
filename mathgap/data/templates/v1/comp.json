@@ -1,0 +1,244 @@
+{
+    "statements": [
+        {
+            "templates": [
+                "[subj_agent] has [quantity] more {subj_ent} than [obj_agent] has {obj_ent}."
+            ],
+            "condition": "([comp_type] == more) and {is_about_subj} and (not {same_eau})"
+        },
+        {
+            "templates": [
+                "[subj_agent] has [quantity] more {subj_ent} than [obj_agent]."
+            ],
+            "condition": "([comp_type] == more) and {is_about_subj} and {same_eau}"
+        },
+        {
+            "templates": [
+                "[obj_agent] has [quantity] {obj_ent} less than [subj_agent] has {subj_ent}.",
+                "If we take away [quantity] {subj_ent} from [subj_agent], then [subj_agent] has as many {subj_ent} as [obj_agent] has {obj_ent}.",
+                "The number of {subj_ent} [subj_agent] has exceeds the number of {obj_ent} [obj_agent] has by [quantity]."
+            ],
+            "condition": "([comp_type] == more) and (not {is_about_subj}) and (not {same_eau})"
+        },
+        {
+            "templates": [
+                "[obj_agent] has [quantity] {obj_ent} less than [subj_agent].",
+                "If we take away [quantity] {subj_ent} from [subj_agent], then [subj_agent] has as many {subj_ent} as [obj_agent].",
+                "[subj_agent]'s number of {subj_ent} exceeds [obj_agent]'s by [quantity]."
+            ],
+            "condition": "([comp_type] == more) and (not {is_about_subj}) and {same_eau}"
+        },
+
+
+        {
+            "templates": [
+                "[subj_agent] has [quantity] {subj_ent} less than [obj_agent] has {obj_ent}.",
+                "If we take away [quantity] {obj_ent} from [obj_agent], then [obj_agent] has as many {obj_ent} as [subj_agent] has {subj_ent}.",
+                "The number of {obj_ent} [obj_agent] has exceeds the number of {subj_ent} [subj_agent] has by [quantity]."
+            ],
+            "condition": "([comp_type] == less) and {is_about_subj} and (not {same_eau})"
+        },
+        {
+            "templates": [
+                "[subj_agent] has [quantity] {subj_ent} less than [obj_agent].",
+                "If we take away [quantity] {obj_ent} from [obj_agent], then [obj_agent] has as many {obj_ent} as [subj_agent].",
+                "[obj_agent]'s number of {obj_ent} exceeds [subj_agent]'s by [quantity]."
+            ],
+            "condition": "([comp_type] == less) and {is_about_subj} and {same_eau}"
+        },
+        {
+            "templates": [
+                "[obj_agent] has [quantity] more {obj_ent} than [subj_agent] has {subj_ent}."
+            ],
+            "condition": "([comp_type] == less) and (not {is_about_subj}) and (not {same_eau})"
+        },
+        {
+            "templates": [
+                "[obj_agent] has [quantity] more {obj_ent} than [subj_agent]."
+            ],
+            "condition": "([comp_type] == less) and (not {is_about_subj}) and {same_eau}"
+        },
+
+
+        {
+            "templates": [
+                "[subj_agent] has [quantity] times as many {subj_ent} as [obj_agent] has {obj_ent}."
+            ],
+            "condition": "([comp_type] == times) and {is_about_subj} and (not {same_eau})"
+        },
+        {
+            "templates": [
+                "[subj_agent] has [quantity] times as many {subj_ent} as [obj_agent]."
+            ],
+            "condition": "([comp_type] == times) and {is_about_subj} and {same_eau}"
+        },
+        {
+            "templates": [
+                "[obj_agent] has 1/[quantity] as many {obj_ent} as [subj_agent] has {subj_ent}.",
+                "The number of {subj_ent} [subj_agent] has divided by [quantity] equals the number of {obj_ent} [obj_agent] has.",
+                "If we divide the number of {subj_ent} [subj_agent] has by [quantity], then [subj_agent] has the same number of {subj_ent} as [obj_agent] has {obj_ent}."
+            ],
+            "condition": "([comp_type] == times) and (not {is_about_subj}) and (not {same_eau})"
+        },
+        {
+            "templates": [
+                "[obj_agent] has 1/[quantity] as many {obj_ent} as [subj_agent].",
+                "The number of {subj_ent} [subj_agent] has divided by [quantity] equals the number of {obj_ent} [obj_agent] has.",
+                "If we divide the number of {subj_ent} [subj_agent] has by [quantity], then [subj_agent] has the same number of {subj_ent} as [obj_agent]."
+            ],
+            "condition": "([comp_type] == times) and (not {is_about_subj}) and {same_eau}"
+        },
+
+
+        {
+            "templates": [
+                "[subj_agent] has 1/[quantity] as many {subj_ent} as [obj_agent] has {obj_ent}.",
+                "The number of {obj_ent} [obj_agent] has divided by [quantity] equals the number of {subj_ent} [subj_agent] has.",
+                "If we divide the number of {obj_ent} [obj_agent] has by [quantity], then [obj_agent] has the same number of {obj_ent} as [subj_agent] has {subj_ent}."
+            ],
+            "condition": "([comp_type] == dividedby) and {is_about_subj} and (not {same_eau})"
+        },
+        {
+            "templates": [
+                "[subj_agent] has 1/[quantity] as many {subj_ent} as [obj_agent].",
+                "The number of {obj_ent} [obj_agent] has divided by [quantity] equals the number of {subj_ent} [subj_agent] has.",
+                "If we divide the number of {obj_ent} [obj_agent] has by [quantity], then [obj_agent] has the same number of {obj_ent} as [subj_agent]."
+            ],
+            "condition": "([comp_type] == dividedby) and {is_about_subj} and {same_eau}"
+        },
+        {
+            "templates": [
+                "[obj_agent] has [quantity] times as many {obj_ent} as [subj_agent] has {subj_ent}."
+            ],
+            "condition": "([comp_type] == dividedby) and (not {is_about_subj}) and (not {same_eau})"
+        },
+        {
+            "templates": [
+                "[obj_agent] has [quantity] times as many {obj_ent} as [subj_agent]."
+            ],
+            "condition": "([comp_type] == dividedby) and (not {is_about_subj}) and {same_eau}"
+        }
+    ],
+    "questions": [
+    ],
+    "conclusions": [
+        {
+            "templates": [
+                "So [subj_agent] has [quantity;depth=1] = [quantity] more {subj_ent} than [obj_agent] has {obj_ent}."
+            ],
+            "condition": "([comp_type] == more) and {is_about_subj} and (not {same_eau})"
+        },
+        {
+            "templates": [
+                "So [subj_agent] has [quantity;depth=1] = [quantity] more {subj_ent} than [obj_agent]."
+            ],
+            "condition": "([comp_type] == more) and {is_about_subj} and {same_eau}"
+        },
+        {
+            "templates": [
+                "So [obj_agent] has [quantity;depth=1] = [quantity] {obj_ent} less than [subj_agent] has {subj_ent}."
+            ],
+            "condition": "([comp_type] == more) and (not {is_about_subj}) and (not {same_eau})"
+        },
+        {
+            "templates": [
+                "So [obj_agent] has [quantity;depth=1] = [quantity] {obj_ent} less than [subj_agent]."
+            ],
+            "condition": "([comp_type] == more) and (not {is_about_subj}) and {same_eau}"
+        },
+
+
+        {
+            "templates": [
+                "So [subj_agent] has [quantity;depth=1] = [quantity] {subj_ent} less than [obj_agent] has {obj_ent}."
+            ],
+            "condition": "([comp_type] == less) and {is_about_subj} and (not {same_eau})"
+        },
+        {
+            "templates": [
+                "So [subj_agent] has [quantity;depth=1] = [quantity] {subj_ent} less than [obj_agent]."
+            ],
+            "condition": "([comp_type] == less) and {is_about_subj} and {same_eau}"
+        },
+        {
+            "templates": [
+                "So [obj_agent] has [quantity;depth=1] = [quantity] more {subj_ent} than [subj_agent] has {subj_ent}."
+            ],
+            "condition": "([comp_type] == less) and (not {is_about_subj}) and (not {same_eau})"
+        },
+        {
+            "templates": [
+                "So [obj_agent] has [quantity;depth=1] = [quantity] more {subj_ent} than [subj_agent]."
+            ],
+            "condition": "([comp_type] == less) and (not {is_about_subj}) and {same_eau}"
+        },
+
+        
+        {
+            "templates": [
+                "So [subj_agent] has [quantity;depth=1] = [quantity] times as many {subj_ent} as [obj_agent] has {obj_ent}."
+            ],
+            "condition": "([comp_type] == times) and {is_about_subj} and (not {same_eau})"
+        },
+        {
+            "templates": [
+                "So [subj_agent] has [quantity;depth=1] = [quantity] times as many {subj_ent} as [obj_agent]."
+            ],
+            "condition": "([comp_type] == times) and {is_about_subj} and {same_eau}"
+        },
+        {
+            "templates": [
+                "So [obj_agent] has 1/([quantity;depth=1]) = 1/[quantity] as many {obj_ent} as [subj_agent] has {subj_ent}."
+            ],
+            "condition": "([comp_type] == times) and (not {is_about_subj}) and (not {same_eau})"
+        },
+        {
+            "templates": [
+                "So [obj_agent] has 1/([quantity;depth=1]) = 1/[quantity] as many {obj_ent} as [subj_agent]."
+            ],
+            "condition": "([comp_type] == times) and (not {is_about_subj}) and (not {same_eau})"
+        },
+
+        
+        {
+            "templates": [
+                "So [subj_agent] has 1/([quantity;depth=1]) = 1/[quantity] as many {subj_ent} as [obj_agent] has {obj_ent}."
+            ],
+            "condition": "([comp_type] == dividedby) and {is_about_subj} and (not {same_eau})"
+        },
+        {
+            "templates": [
+                "So [subj_agent] has 1/([quantity;depth=1]) = 1/[quantity] as many {subj_ent} as [obj_agent]."
+            ],
+            "condition": "([comp_type] == dividedby) and {is_about_subj} and {same_eau}"
+        },
+        {
+            "templates": [
+                "So [obj_agent] has [quantity;depth=1] = [quantity] times as many {obj_ent} as [subj_agent] has {subj_ent}."
+            ],
+            "condition": "([comp_type] == dividedby) and (not {is_about_subj}) and (not {same_eau})"
+        },
+        {
+            "templates": [
+                "So [obj_agent] has [quantity;depth=1] = [quantity] times as many {obj_ent} as [subj_agent]."
+            ],
+            "condition": "([comp_type] == dividedby) and (not {is_about_subj}) and (not {same_eau})"
+        }
+    ],
+    "partials": {
+        "subj_ent": [
+            "[subj_entity]",
+            "[subj_attribute] [subj_entity]",
+            "[subj_unit]s of [subj_entity]"
+        ],
+        "obj_ent": [
+            "[obj_entity]",
+            "[obj_attribute] [obj_entity]",
+            "[obj_unit]s of [obj_entity]"
+        ]
+    },
+    "named_conditions": {
+        "same_eau": "([subj_entity] == [obj_entity]) and ([subj_attribute] == [obj_attribute]) and ([subj_unit] == [obj_unit])",
+        "is_about_subj": "([subj_agent] == [conclusion.agent])"
+    }
+}
