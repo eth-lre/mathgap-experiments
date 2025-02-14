@@ -21,4 +21,4 @@ dependencies = [
 packages = ["mathgap"]
 
 [project.urls]
-homepage = "https://github.com/YanickZengaffinen/mathgap-experiments"
+homepage = "https://github.com/eth-lre/mathgap-experiments"
