@@ -63,7 +63,7 @@ NOTE: if your rule introduces a write (e.g., Container) to a variable that is no
 4. Add the inference rule to the list of rules that your generator uses
 
 ### Instantiators
-If you want to enforce new constraints when instantiating properties (e.g. if there should be no subtractions with a carry), then you can simply add a new [Instantiator](mathgap/mathgap/instantiate/instantiators.py) and use it to instantiate your properties.
+If you want to enforce new constraints when instantiating properties (e.g. if there should be no subtractions with a carry), then you can simply add a new [Instantiator](mathgap/instantiate/instantiators.py) and use it to instantiate your properties.
 
 ### Instantiation Values
 For the respective property type, simply add a new version in mathgap/mathgap/data and load your new version instead of the default one.
@@ -79,11 +79,11 @@ Key concepts to know:
     - partials (all possible partials under the given name can be rendererd instead of this part)
     - expressions (the instantiated expression is looked up and rendered up to some depth, e.g. 5 + 10 if depth = 1)
     - lists of properties (in this case you can specify which word will be used to join them, e.g. "Alice, Bob and Charlie")
-- for groups of templates, conditions can be specified, which need to hold in order for the template to be eligible to render a logical form of this type. conditions include: And, Equality etc (you can also add custom ones, see [conditions.py](mathgap/mathgap/natlang/templates/condition.py)). Conditions can reference the logical form but also the tree (e.g. through queries: "condition": { "type": "equality", "property": "sender", "query": "conclusion.agent" }, this would compare the property sender of the logical form with the agent of the conclusion logical form).
+- for groups of templates, conditions can be specified, which need to hold in order for the template to be eligible to render a logical form of this type. conditions include: And, Equality etc (you can also add custom ones, see [conditions.py](mathgap/natlang/templates/condition.py)). Conditions can reference the logical form but also the tree (e.g. through queries: "condition": { "type": "equality", "property": "sender", "query": "conclusion.agent" }, this would compare the property sender of the logical form with the agent of the conclusion logical form).
 
 ### Generation
-There's a default [generator](mathgap/mathgap/trees/generators/general.py) to generate general nonlinear proof trees (these nonlinear trees are different to those used in the paper, visit `experiments/opedal24_ood_eval` for those). You can specify the stopping criteria (e.g., depth 3) as well as the inference rules that are used. Depending on the set of inference rules you use, you can also generate linear proof trees.
-If you want a specific tree structure, you can either implement a custom [rule-sampling-policy](mathgap/mathgap/trees/generators/policies/rulesamplingpolicy.py) or hardcode a new [generator](mathgap/mathgap/trees/generators/generator.py).
+There's a default [generator](mathgap/trees/generators/general.py) to generate general nonlinear proof trees (these nonlinear trees are different to those used in the paper, visit `experiments/opedal24_ood_eval` for those). You can specify the stopping criteria (e.g., depth 3) as well as the inference rules that are used. Depending on the set of inference rules you use, you can also generate linear proof trees.
+If you want a specific tree structure, you can either implement a custom [rule-sampling-policy](mathgap/trees/generators/policies/rulesamplingpolicy.py) or hardcode a new [generator](mathgap/trees/generators/generator.py).
 
 
 ## Acknowledgements
