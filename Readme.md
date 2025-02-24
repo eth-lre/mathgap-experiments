@@ -24,7 +24,7 @@ With MathGAP you can generate arithmetic math word problems of arbitrary complex
 ```
 conda create -n mathgap python=3.10
 conda activate mathgap
-pip install -e mathgap
+pip install -e mathgap-experiments
 ```
 
 Generate a nonlinear problem and its solution for a tree of a certain depth:
