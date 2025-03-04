@@ -17,6 +17,8 @@ Example (when in /experiments/opedal24_ood_eval):
 python generate.py linear-comparison -o "out/depth.csv" -n 30 --min-depth 1 --max-depth 4
 ```
 
+**Note** that generating deep nonlinear examples (depth >= 5) may take some time.
+
 ### Cite as:
 ```bibtex
 @inproceedings{opedal2025mathgap,
