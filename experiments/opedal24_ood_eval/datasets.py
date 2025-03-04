@@ -83,6 +83,39 @@ def generate_linear_transfer(nr_problems: int, min_depth: int, max_depth: int, s
         "width": len(mwp.tree.leaf_nodes)
     } for mwp in mwps]
 
+def generate_linear_depth(nr_problems: int, min_depth: int, max_depth: int, seed: int = None, data_folder: str = DATA_FOLDER) -> List[Dict[str, str]]:
+    """ 
+        Generates a dataset of linear mwps with transfer and commparison inference rules, where the underlying proof tree is of depth between min_depth and max_depth.
+    """
+    weights_by_generator = {
+        default_generator(use_attribute=atrr_unit[0], use_unit=atrr_unit[1], 
+                          comp_same_entity_prob=1.0, compeq_same_entity_prob=1.0, 
+                          stopping_criterion=BranchDepthCriterion(i), 
+                          start_types=CONT_START_TYPE, inference_rules=COMP_TRANSFER_RULESET): 1.0
+        for i in range(min_depth, max_depth+1) for atrr_unit in [[False, False], [True, False], [False, True]]
+    }
+    generator = MultiGenerator(weights_by_generator)
+
+    instantiator = default_instantiator(data_folder=data_folder, dataversion="v1", leaf_min_value=2, leaf_max_value=20, 
+                                        inner_min_value=2, inner_max_value=10_000)
+    
+    ps_template_sampler, ps_answers_template_sampler, ps_renderer, rt_template_sampler, rt_renderer \
+        = default_templates_and_samplers(data_folder, "v1", WHITESPACE)
+
+    mwps = generate_mwps(nr_problems, generator, instantiator, CANONICAL_ORDER_SAMPLER, 
+                         ps_template_sampler, ps_answers_template_sampler, ps_renderer, 
+                         rt_template_sampler, rt_renderer, seed)
+
+    return [{
+        "problem": mwp.ps_nl,
+        "reasoning_trace": mwp.rt_nl,
+        "answer": mwp.numerical_answers[-1],
+        "answer_nl": mwp.answers_nl,
+        "depth": mwp.tree.depth,
+        "width": len(mwp.tree.leaf_nodes)
+    } for mwp in mwps]
+
+
 def generate_linear_partwhole(nr_problems: int, min_width: int, max_width: int, seed: int = None, data_folder: str = DATA_FOLDER) -> List[Dict[str, str]]:
     """ 
         Generates a dataset of linear mwps with part-whole inference rules, where the underlying proof tree is of depth 1 and has width between min_width and max_width.
@@ -132,7 +165,7 @@ def generate_nonlinear_comparison(nr_problems: int, min_depth: int, max_depth: i
     }
     generator = MultiGenerator(weights_by_generator)
 
-    instantiator = default_instantiator(data_folder=data_folder, dataversion="v1", leaf_min_value=2, leaf_max_value=20, 
+    instantiator = default_instantiator(data_folder=data_folder, dataversion="long", leaf_min_value=2, leaf_max_value=20, 
                                         inner_min_value=2, inner_max_value=10_000, strategy="cpga")
     
     ps_template_sampler, ps_answers_template_sampler, ps_renderer, rt_template_sampler, rt_renderer \
