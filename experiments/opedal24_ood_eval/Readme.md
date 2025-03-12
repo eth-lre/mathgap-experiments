@@ -17,14 +17,7 @@ Example (when in /experiments/opedal24_ood_eval):
 python generate.py linear-comparison -o "out/depth.csv" -n 30 --min-depth 1 --max-depth 4
 ```
 
-**Note** that generating deep nonlinear examples (depth >= 5) may take some time.
+**Note:** it may take some time to find valid numerical instantiations for deep problems (depth >= 5), leading to long runtimes. The function will abort generation after a fixed number of failed instantiations, yielding the following message:
+> Failed to find a valid instantiation after 100000 iterations!
 
-### Cite as:
-```bibtex
-@inproceedings{opedal2025mathgap,
-title={Math{GAP}: Out-of-Distribution Evaluation on Problems with Arbitrarily Complex Proofs},
-author={Andreas Opedal and Haruki Shirakami and Bernhard Sch{\"o}lkopf and Abulhair Saparov and Mrinmaya Sachan},
-booktitle={The Thirteenth International Conference on Learning Representations},
-year={2025},
-url={https://openreview.net/forum?id=5ck9PIrTpH}
-}
+This can be mitigated by setting ``leaf_max_value`` in ``datasets.py`` to a larger value.
