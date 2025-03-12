@@ -94,7 +94,7 @@ The authors are grateful for help from Yanick Zengaffinen in developing the code
 ```bibtex
 @inproceedings{opedal2025mathgap,
 title={Math{GAP}: Out-of-Distribution Evaluation on Problems with Arbitrarily Complex Proofs},
-author={Andreas Opedal and Haruki Shirakami and Bernhard Sch{\"o}lkopf and Abulhair Saparov and Mrinmaya Sachan},
+author={Opedal, Andreas and Shirakami, Haruki and Sch{\"o}lkopf, Bernhard and Saparov, Abulhair and Sachan, Mrinmaya},
 booktitle={The Thirteenth International Conference on Learning Representations},
 year={2025},
 url={https://openreview.net/forum?id=5ck9PIrTpH}
