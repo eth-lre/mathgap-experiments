@@ -97,5 +97,5 @@ title={Math{GAP}: Out-of-Distribution Evaluation on Problems with Arbitrarily Co
 author={Opedal, Andreas and Shirakami, Haruki and Sch{\"o}lkopf, Bernhard and Saparov, Abulhair and Sachan, Mrinmaya},
 booktitle={The Thirteenth International Conference on Learning Representations},
 year={2025},
-url={https://openreview.net/forum?id=5ck9PIrTpH}
+url={https://arxiv.org/abs/2410.13502}
 }
