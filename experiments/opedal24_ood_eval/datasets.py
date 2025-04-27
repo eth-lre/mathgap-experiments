@@ -29,7 +29,7 @@ def generate_linear_comparison(nr_problems: int, min_depth: int, max_depth: int,
     # 2. Load the default instantiator but use the agents, entities etc specified in the data-folder of this experiment
     #    The instantiator will be used to instantiate properties with values (e.g. agent1 -> Alice, quantity1 -> 4)
     instantiator = default_instantiator(data_folder=data_folder, dataversion="v1", leaf_min_value=2, leaf_max_value=20, 
-                                        inner_min_value=2, inner_max_value=10_000)
+                                        inner_min_value=2, inner_max_value=10_000, strategy="cpga")
     
     # 3. Load template renderers and samplers
     #    They will be used to express logical forms and deduction steps as natural language
@@ -65,7 +65,7 @@ def generate_linear_transfer(nr_problems: int, min_depth: int, max_depth: int, s
     generator = MultiGenerator(weights_by_generator)
 
     instantiator = default_instantiator(data_folder=data_folder, dataversion="v1", leaf_min_value=2, leaf_max_value=20, 
-                                        inner_min_value=2, inner_max_value=10_000)
+                                        inner_min_value=2, inner_max_value=10_000, strategy="cpga")
     
     ps_template_sampler, ps_answers_template_sampler, ps_renderer, rt_template_sampler, rt_renderer \
         = default_templates_and_samplers(data_folder, "v1", WHITESPACE)
@@ -97,7 +97,7 @@ def generate_linear_depth(nr_problems: int, min_depth: int, max_depth: int, seed
     generator = MultiGenerator(weights_by_generator)
 
     instantiator = default_instantiator(data_folder=data_folder, dataversion="v1", leaf_min_value=2, leaf_max_value=20, 
-                                        inner_min_value=2, inner_max_value=10_000)
+                                        inner_min_value=2, inner_max_value=10_000, strategy="cpga")
     
     ps_template_sampler, ps_answers_template_sampler, ps_renderer, rt_template_sampler, rt_renderer \
         = default_templates_and_samplers(data_folder, "v1", WHITESPACE)
@@ -130,7 +130,7 @@ def generate_linear_partwhole(nr_problems: int, min_width: int, max_width: int, 
     generator = MultiGenerator(weights_by_generator)
 
     instantiator = default_instantiator(data_folder=data_folder, dataversion="v1", leaf_min_value=2, leaf_max_value=20, 
-                                        inner_min_value=2, inner_max_value=10_000)
+                                        inner_min_value=2, inner_max_value=10_000, strategy="cpga")
     
     ps_template_sampler, ps_answers_template_sampler, ps_renderer, rt_template_sampler, rt_renderer \
         = default_templates_and_samplers(data_folder, "v1", WHITESPACE)
@@ -207,7 +207,7 @@ def generate_moved_linear_comparison(nr_problems: int, depth: int, move_idx: int
     # 2. Load the default instantiator but use the agents, entities etc specified in the data-folder of this experiment
     #    The instantiator will be used to instantiate properties with values (e.g. agent1 -> Alice, quantity1 -> 4)
     instantiator = default_instantiator(data_folder=data_folder, dataversion="v1", leaf_min_value=2, leaf_max_value=20, 
-                                        inner_min_value=2, inner_max_value=10_000)
+                                        inner_min_value=2, inner_max_value=10_000, strategy="cpga")
     
     # 3. Load template renderers and samplers
     #    They will be used to express logical forms and deduction steps as natural language
